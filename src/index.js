@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// starting point of app here 
+// specify root component with App, and DOM element controlled by React with id="root"
+// everything inside App controlled by React
+// App component rendered inside "root" DOM node
 ReactDOM.render(
   <React.StrictMode>
     <App />
