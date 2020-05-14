@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// starting point of app here 
+// starting point of app here - connects React with DOM?
 // specify root component with App, and DOM element controlled by React with id="root"
 // everything inside App controlled by React
 // App component rendered inside "root" DOM node
