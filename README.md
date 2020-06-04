@@ -4,7 +4,7 @@ Learning ReactJS journal. Thanks to Codevolution for his detailed Youtube playli
 
 View my Google Docs notes here: https://drive.google.com/drive/folders/1e938NkaP0iMmdfjR6f4Tk74-AOBqE6ZP?usp=sharing
 
-## Table of contents
+## TOC
 1. Intro
 2. Hello World
 3. Folder Structure
@@ -88,9 +88,11 @@ There are two main approaches to create/setup a React app: `npx` and `npm`.
   - This installs create-react-app package globally and uses the package to generate the project. 
   - This approach is possible, but less preferred. 
 
+Start the app server with `npm start` in the CLI. 
+
 ### Folder Structure
 
-It's important to understand the files/folders involved, and the control flow when the app is run. 
+It's important to understand the files/folders involved and the control flow when the app is run. 
 
 Important files/folders to know are: 
 - `package.json`
@@ -132,7 +134,7 @@ The component code is placed in JS files. JS files can have a .js or .jsx extens
 - App component in App.js
 - Code for component is inside .js file, but the code depends on the type of component. 
 
-Types of copmonents: 
+Types of components: 
 - Stateless functional component
   - This is literally a JS function which returns HTML, which in turn describes the UI. 
   ```function Welcome(props) {
@@ -148,3 +150,6 @@ Types of copmonents:
     }
   }
   ```
+
+### Functional Components
+
