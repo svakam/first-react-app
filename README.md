@@ -123,3 +123,28 @@ Important files/folders to know are:
     - Referenced in the App component
   - `serviceworker.js`
     - Progressive Web apps
+
+### Components Overview
+
+Suppose an app contains the previously discussed 5 components - header, sidenav, main, footer, and one component to contain all the other components ("root", named App). Each component describes only part of the UI, and each component comes together to make an entire app. These components are reusable and can be nested inside other components. The same component can also be used with different propreties to display different information. 
+
+The component code is placed in JS files. JS files can have a .js or .jsx extension. 
+- App component in App.js
+- Code for component is inside .js file, but the code depends on the type of component. 
+
+Types of copmonents: 
+- Stateless functional component
+  - This is literally a JS function which returns HTML, which in turn describes the UI. 
+  ```function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>
+  }
+  ```
+- Stateful class component
+  - This is a regular ES6 class that extends the component class from the React library. 
+  - It must contain a method that returns HTML. 
+  ``` class Welcome extends React.Component {
+    render() {
+      return <h1>Hello, {this.props.name}</h1>
+    }
+  }
+  ```
