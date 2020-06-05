@@ -14,4 +14,4 @@ import React from 'react'
 // export default Greet // 'default' allows component to be renamed in the file it's being used in; most commonly used
 
 // named export requires component to be imported in App.js with the exact name here
-export const Greet = () => <h1>Hello, Vik</h1>
+export const Greet = () => <h1>Hello, Vik: first functional component</h1>

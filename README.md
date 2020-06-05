@@ -6,41 +6,42 @@ View my Google Docs notes here: https://drive.google.com/drive/folders/1e938NkaP
 
 ## TOC
 1. [Intro](#intro)
-2. [Hello World](#hello-world:-create-react-app)
-3. [Folder Structure](#folder-structure)
-4. [Components](#components)
-5. [Functional components](#functional-components)
-6. [Class components](#class-components)
-7. [Hooks update](#hooks-update)
-8. JSX
-9. Props
-10. State
-11. setState
-12. Destructuring props and state
-13. Event handling
-14. Binding event handlers
-15. Methods as props
-16. Conditional rendering
-17. List rendering
-18. Lists and keys
-19. Index as key anti-pattern
-20. Styling and CSS basics
-21. Basics of form handling
-22. Component lifecycle methods
-23. Component mounting lifecycle methods
-24. Component updating lifecycle methods
-25. Fragments
-26. Pure components
-27. memo
-28. Refs
-29. Refs with class components
-30. Forwarding refs
-31. Portals
-32. Error boundary
-33. Higher order components
-34. Render props 
-35. Context
-36. HTTP and React
+1. [Hello World: Create React App](#hello-world-create-react-app)
+1. [Folder Structure](#folder-structure)
+1. [Components](#components)
+1. [Functional components](#functional-components)
+1. [Class components](#class-components)
+1. [Functional vs class components](#when-to-use-functional-vs-class-components)
+1. [Hooks update](#hooks-update)
+1. JSX
+1. Props
+1. State
+1. setState
+1. Destructuring props and state
+1. Event handling
+1. Binding event handlers
+1. Methods as props
+1. Conditional rendering
+1. List rendering
+1. Lists and keys
+1. Index as key anti-pattern
+2. Styling and CSS basics
+2. Basics of form handling
+2. Component lifecycle methods
+2. Component mounting lifecycle methods
+2. Component updating lifecycle methods
+2. Fragments
+2. Pure components
+2. memo
+2. Refs
+2. Refs with class components
+3. Forwarding refs
+3. Portals
+3. Error boundary
+3. Higher order components
+3. Render props 
+3. Context
+3. HTTP and React
 
 ### Intro
 React is an open-source JS library for building user interfaces (UI). 
@@ -89,6 +90,8 @@ There are two main approaches to create/setup a React app: `npx` and `npm`.
   - This approach is possible, but less preferred. 
 
 Start the app server with `npm start` in the CLI. 
+
+![createreactapp](img/createreactapp.PNG)
 
 [Back to Top](#toc)
 
@@ -217,9 +220,77 @@ import { Greet } from './components/Greet'
 
 This would fix the name of the component, thus not allowing renaming of the new component in App.js. 
 
+![funccomp](img/funccomp.PNG)
+
 [Back to Top](#toc)
 
 ### Class Components
+
+Class components are similar to functional components; they too can receive an input 'props' parameter object and return HTML. 
+
+Class components are distinct, because they maintain an internal (informational) private state. This information is still used to describe the UI. 
+
+Create a new .js file in a components folder (under src). 
+
+Import React AND the Component class via `import React, { Component } from 'react'`. 
+
+The new class will extend the Component class. It also requires a render method that returns HTML. 
+
+Defualt export the class, and import the class in App.js. Use the new component in the HTML as its custom HTML tag. 
+
+```
+// Welcome.js
+import React, { Component } from 'react'
+
+class Welcome extends Component {
+  render() {
+    return <h1>Class component</h1>
+  }
+}
+
+export default Welcome
+```
+
+```
+// App.js
+import Welcome from './components/Welcome'
+
+function App() {
+  return (
+    <div className="App">
+      <Greet />
+      <Welcome />
+    </div>
+  );
+}
+```
+
+![classcomp](img/classcomp.PNG)
+
+[Back to Top](#toc)
+
+### Functional vs Class Components
+
+When to use a functional vs. class component?
+
+Functional components:
+- Are for simple functions
+- Are to be used as much as possible. If it's possible to create a component with either functional vs. class approaches, always go with the functional approach
+- Are mainly responsible for the UI
+- Are AKA stateless/dumb/presentational components
+- Advantage: absence of the 'this' keyword
+- Advantage: it's a solution that doesn't need to use state, and therefore less logic is required
+- Disadvantage: not for more complex UI logic
+- Disadvantage: no lifecycle hooks
+
+Class components: 
+- Are more feature rich
+- Maintain their own private data, AKA state
+- Are AKA stateful/smart/container components
+- Advantage: can handle more complex UI logic
+- Advantage: most importantly, provides lifecycle hooks
+- Disadvantage: more logic required to implement 
+- Disadvantage: If there are a number of components, each with a private state, maintenance/debugging can be difficult between them
 
 [Back to Top](#toc)
 
