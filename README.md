@@ -1,18 +1,16 @@
 # ReactJS Tutorial: First React app
 
-Learning ReactJS journal. Thanks to Codevolution for his detailed Youtube playlist on ReactJS! https://www.youtube.com/playlist?list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3
-
-View my Google Docs notes here: https://drive.google.com/drive/folders/1e938NkaP0iMmdfjR6f4Tk74-AOBqE6ZP?usp=sharing
+ReactJS learning journal. Thanks to Codevolution for his detailed [YouTube playlist](https://www.youtube.com/playlist?list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3) on ReactJS! 
 
 ## TOC
 1. [Intro](#intro)
 1. [Hello World: Create React App](#hello-world-create-react-app)
 1. [Folder Structure](#folder-structure)
 1. [Components](#components)
-1. [Functional components](#functional-components)
-1. [Class components](#class-components)
-1. [Functional vs class components](#when-to-use-functional-vs-class-components)
-1. [Hooks update](#hooks-update)
+1. [Functional Components](#functional-components)
+1. [Class Components](#class-components)
+1. [Functional vs Class Components](#when-to-use-functional-vs-class-components)
+1. [Hooks Update](#hooks-update)
 1. JSX
 1. Props
 1. State
@@ -279,21 +277,30 @@ Functional components:
 - Are mainly responsible for the UI
 - Are AKA stateless/dumb/presentational components
 - Advantage: absence of the 'this' keyword
-- Advantage: it's a solution that doesn't need to use state, and therefore less logic is required
+- Advantage: it's a solution that doesn't need to use state _(no longer true with Hooks update - state can now be implemented without writing a class)_, and therefore less logic is required
 - Disadvantage: not for more complex UI logic
-- Disadvantage: no lifecycle hooks
 
 Class components: 
 - Are more feature rich
 - Maintain their own private data, AKA state
 - Are AKA stateful/smart/container components
 - Advantage: can handle more complex UI logic
-- Advantage: most importantly, provides lifecycle hooks
+- Advantage: most importantly, provides lifecycle hooks _(no longer true with Hooks update - hooks can also be used in functional components)_
 - Disadvantage: more logic required to implement 
 - Disadvantage: If there are a number of components, each with a private state, maintenance/debugging can be difficult between them
 
 [Back to Top](#toc)
 
 ### Hooks Update
+
+As of Oct 29, 2018: Hooks are a new feature proposal that lets you use state and other React features without writing a class. This means that state and code similar to lifecycle hooks, which were exclusive to class components, can also be used in functional components. 
+
+There are no breaking changes with older versions. 
+
+Hooks are opt-in. 
+
+Hooks are 100% backwards compatible. 
+
+Hooks are not necessary for a React app, thus not needed to learn. Functional vs class component comparisons still hold true, except that functional components can hold state and/or use lifecycle hooks, if needed. 
 
 [Back to Top](#toc)
