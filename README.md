@@ -5,13 +5,13 @@ Learning ReactJS journal. Thanks to Codevolution for his detailed Youtube playli
 View my Google Docs notes here: https://drive.google.com/drive/folders/1e938NkaP0iMmdfjR6f4Tk74-AOBqE6ZP?usp=sharing
 
 ## TOC
-1. Intro
-2. Hello World
-3. Folder Structure
-4. Components
-5. Functional components
-6. Class components
-7. Hooks update
+1. [Intro](#intro)
+2. [Hello World](#hello-world:-create-react-app)
+3. [Folder Structure](#folder-structure)
+4. [Components](#components)
+5. [Functional components](#functional-components)
+6. [Class components](#class-components)
+7. [Hooks update](#hooks-update)
 8. JSX
 9. Props
 10. State
@@ -90,6 +90,8 @@ There are two main approaches to create/setup a React app: `npx` and `npm`.
 
 Start the app server with `npm start` in the CLI. 
 
+[Back to Top](#toc)
+
 ### Folder Structure
 
 It's important to understand the files/folders involved and the control flow when the app is run. 
@@ -126,6 +128,8 @@ Important files/folders to know are:
   - `serviceworker.js`
     - Progressive Web apps
 
+[Back to Top](#toc)
+
 ### Components Overview
 
 Suppose an app contains the previously discussed 5 components - header, sidenav, main, footer, and one component to contain all the other components ("root", named App). Each component describes only part of the UI, and each component comes together to make an entire app. These components are reusable and can be nested inside other components. The same component can also be used with different propreties to display different information. 
@@ -152,6 +156,8 @@ Types of components:
     }
   }
   ```
+
+[Back to Top](#toc)
 
 ### Functional Components
 
@@ -210,3 +216,13 @@ import { Greet } from './components/Greet'
 ```
 
 This would fix the name of the component, thus not allowing renaming of the new component in App.js. 
+
+[Back to Top](#toc)
+
+### Class Components
+
+[Back to Top](#toc)
+
+### Hooks Update
+
+[Back to Top](#toc)
