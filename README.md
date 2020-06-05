@@ -137,14 +137,16 @@ The component code is placed in JS files. JS files can have a .js or .jsx extens
 Types of components: 
 - Stateless functional component
   - This is literally a JS function which returns HTML, which in turn describes the UI. 
-  ```function Welcome(props) {
+  ```
+  function Welcome(props) {
     return <h1>Hello, {props.name}</h1>
   }
   ```
 - Stateful class component
   - This is a regular ES6 class that extends the component class from the React library. 
   - It must contain a method that returns HTML. 
-  ``` class Welcome extends React.Component {
+  ``` 
+  class Welcome extends React.Component {
     render() {
       return <h1>Hello, {this.props.name}</h1>
     }
@@ -153,3 +155,58 @@ Types of components:
 
 ### Functional Components
 
+Functional components are just JS functions. They accept an optional object parameter called Properties (props). The component returns HTML (AKA JSX), which describes the UI. 
+
+Start a components folder within src. 
+
+To create a component, create a .js file named anything you want in the folder. 
+
+Import React from its library in this file via `import React from 'react'`. For every component created, be sure to import React. 
+
+It's possible to create the new functional component via a traditional JS function `function Greet() { }` that returns some desired HTML `return <h1>Hello, Vik</h1>`. 
+
+It's also possible and preferred to use an ES6 arrow function `const Greet = () => <h1>Hello, Vik</h1>`. 
+
+To connect the component to the App, go to App.js and add the new component in the existing App component. To do this, first export the component from the component file via `export default Greet`. Then import the component in App.js via `import Greet from '<location>'` and use the component as a custom element within `<div className="App"></div>`. 
+
+In the App component, replace the template HTML (except the outer div tag) with the custom component's name. 
+
+```
+// Greet.js
+import React from 'react'
+
+const Greet = () => <h1>Hello, Vik</h1>
+
+export default Greet
+```
+
+```
+// App.js
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Greet from './components/Greet'
+
+function App() {
+  return (
+    <div className="App">
+      <Greet />
+    </div> // if no content that goes within the custom Greet tag, then make it a self-closing tag
+  );
+}
+```
+
+If `default` is used in the export statement in this manner, the component can be renamed to anything in the main App component, wherever `Greet` is seen. 
+
+Default exports are preferred and more commonly used, but it's possible to also see named exports. If the component is name exported, the import statement in App.js changes to surround the component name with curly braces. 
+```
+// Greet.js
+export const Greet = () => <h1>Hello, vik</h1>
+```
+
+```
+// App.js
+import { Greet } from './components/Greet'
+```
+
+This would fix the name of the component, thus not allowing renaming of the new component in App.js. 
