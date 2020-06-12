@@ -304,3 +304,120 @@ Hooks are 100% backwards compatible.
 Hooks are not necessary for a React app, thus not needed to learn. Functional vs class component comparisons still hold true, except that functional components can hold state and/or use lifecycle hooks, if needed. 
 
 [Back to Top](#toc)
+
+## JSX
+
+JSX is an extension to the JavaScript language syntax; it's XML-like code for elements and components in React. 
+
+JSX tags consist of a tag name, attributes, and children. 
+
+JSX isn't required to write a React app, but it makes React simpler and elegant. It ultimately transpiles to pure JavaScript, which is understood by the browser. 
+
+The following shows how a component is written without JSX and with. 
+
+### Without JSX
+
+React contains a method called `createElement()` which takes in 3 parameters at minimum. The 1st is a String type which specifies the HTML tag to be rendered. The 2nd is optional and used for attribute creation. The 3rd consists of children of the HTML element, most commonly a `<div>`. 
+
+```
+// Hello.js
+const Hello = () => {
+    return React.createElement('div', null, 'Hello Vik');
+}
+
+export default Hello
+```
+
+```
+// App.js
+import Hello from './components/Hello'
+
+function App() {
+  return (
+    <div className="App">
+      <Greet />
+      <Welcome />
+      <Hello />
+    </div>
+  );
+}
+
+export default App
+```
+
+As it's written, when this component is imported into App.js and rendered, it will present like this: 
+
+![createElement1](img/createelement1.PNG)
+
+The DOM node is rendered as a text element. To wrap it with a tag like `<h1></h1>` and render it as such, an additional element needs to be created within the `createElement()` method, via - you guessed it - `React.createElement()`. This would go where the child node of the parent needs to be created, which is the 3rd parameter of `createElement()`. 
+
+```
+// Hello.js
+
+const Hello = () => {
+  return React.createElement(
+    'div', 
+    null, 
+    React.createElement('h1', null, 'Hello Vik')
+  )
+}
+```
+
+![createElement3](img/createelement3.PNG)
+
+The following implementations will render text nodes and not the actual `<h1>` tag. 
+
+```
+// rendered as the text seen
+const Hello = () => {
+  return React.createElement('h1', null, '<h1>Hello Vik</h1>')
+}
+
+// createElement() can take in more than 3 parameters for multiple tags at once, but this implementation will still render as text
+const Hello = () => {
+  return React.createElement('h1', null, 'h1', 'Hello Vik')
+}
+```
+![createElement2](img/createelement2.PNG)
+
+To add attributes to nodes, fill in the second parameter with key-value pairs inside an object (specified by curly brackets). 
+
+```
+const Hello () => {
+  return React.createElement('div', { id: 'hello', className: 'dummy' }, React.createElement('h1', null, 'Hello Vik'))
+}
+```
+
+### JSX differences
+
+There are conflicts between JSX and HTML syntax. For example, 'class' is a reserved name in React for React class components. Thus, 'className' is used in lieu of what we understand as HTML 'class'. If 'class' was used in place of 'className' and similarly with other conflicts, a browser console warning would appear and display something like: "Warning: Invalid DOM property 'class'. Did you mean 'className'?" Below are further JSX differences from HTML: 
+
+HTML vs. JSX version
+- class -> className
+- for -> htmlFor
+- camelCase property naming convention:
+  - onclick -> onClick
+  - tabindex -> tabIndex
+
+### With JSX
+
+This is the version most familiar - and much more elegant - at this point. Take note of how element attributes are added as well - it's about what is expected, minus the JSX differences in attribute types. 
+
+```
+// Hello.js
+
+import React from 'react'
+
+const Hello = () => {
+  return <h1 id="hello" className="dummy">Hello Vik</h1>
+}
+
+export default Hello
+```
+
+In essence, a JSX element is syntactic sugar for calling `React.createElement()`. This is why React is imported via `import React from 'react'`; this allows the ability to use JSX through the React library, in lieu of the more cumbersome method outlined above. 
+
+### Future changes
+
+As of 2018, there are considerations being made within Facebook about when to implement breaking changes to the React code. One of these includes changing "className" into "class". These changes are targeted for React 18 or 19. This link - [https://github.com/facebook/react/issues/13525](https://github.com/facebook/react/issues/13525) - outlines changes considered at the time. 
+
