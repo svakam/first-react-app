@@ -41,7 +41,7 @@ ReactJS learning journal. Thanks to Codevolution for his detailed [YouTube playl
 3. Context
 3. HTTP and React
 
-### Intro
+## Intro
 React is an open-source JS library for building user interfaces (UI). 
 
 React's architecture is component-based. An app is compartmentalized that can be put together for more complex UIs. While a traditional website may have DOM sections like a header, sidenav, main content, and footer, ReactJS compartmentalizes these into components. 
@@ -71,7 +71,7 @@ It's important to know the following before diving into ReactJS:
     - Rest, spread operators
     - Destructuring assignment
 
-### Hello World: Create React App
+## Hello World: Create React App
 
 To get started, you need Node.js (runtime environment that runs JS code outside a web browser) and an IDE. 
 
@@ -93,7 +93,7 @@ Start the app server with `npm start` in the CLI.
 
 [Back to Top](#toc)
 
-### Folder Structure
+## Folder Structure
 
 It's important to understand the files/folders involved and the control flow when the app is run. 
 
@@ -131,7 +131,7 @@ Important files/folders to know are:
 
 [Back to Top](#toc)
 
-### Components Overview
+## Components Overview
 
 Suppose an app contains the previously discussed 5 components - header, sidenav, main, footer, and one component to contain all the other components ("root", named App). Each component describes only part of the UI, and each component comes together to make an entire app. These components are reusable and can be nested inside other components. The same component can also be used with different propreties to display different information. 
 
@@ -160,7 +160,7 @@ Types of components:
 
 [Back to Top](#toc)
 
-### Functional Components
+## Functional Components
 
 Functional components are just JS functions. They accept an optional object parameter called Properties (props). The component returns HTML (AKA JSX), which describes the UI. 
 
@@ -222,7 +222,7 @@ This would fix the name of the component, thus not allowing renaming of the new 
 
 [Back to Top](#toc)
 
-### Class Components
+## Class Components
 
 Class components are similar to functional components; they too can receive an input 'props' parameter object and return HTML. 
 
@@ -267,7 +267,7 @@ function App() {
 
 [Back to Top](#toc)
 
-### Functional vs Class Components
+## Functional vs Class Components
 
 When to use a functional vs. class component?
 
@@ -291,7 +291,7 @@ Class components:
 
 [Back to Top](#toc)
 
-### Hooks Update
+## Hooks Update
 
 As of Oct 29, 2018: Hooks are a new feature proposal that lets you use state and other React features without writing a class. This means that state and code similar to lifecycle hooks, which were exclusive to class components, can also be used in functional components. 
 
